@@ -1,0 +1,45 @@
+<form id="productSearch" action="#" data-mage-init='{"validation": {}}'>
+    <p id="formError" class="error"></p>
+
+    <fieldset>
+        <legend>Products By Price Range</legend>
+        <label>Minimum price:
+            <input type="number" name="lowRange" step="1" value="0"
+                   data-validate='{"validate-zero-or-greater": true, "required-number": true}'>
+        </label>
+
+        <label>Max price:
+            <input type="number" name="highRange" step="1" value="1"
+
+                   data-validate='{"validate-greater-than-zero": true, "required-number": true}'>
+        </label>
+
+        <label for="sort">Sort:
+            <select name="sort" id="sort" required="true">
+                <option value="ascending" selected>Ascending</option>
+                <option value="descending">Descending</option>
+            </select>
+        </label>
+    </fieldset>
+    <button type="submit">Search Products</button>
+</form>
+
+<div id="productTable" class="hidden">
+    <h4>Products Found:</h4>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Image</th>
+            <th>SKU</th>
+            <th>Name</th>
+            <th>Qty</th>
+            <th>Price</th>
+            <th>Product Link</th>
+        </tr>
+        </thead>
+        <tbody id="productTableBody">
+
+        </tbody>
+    </table>
+</div>
